@@ -3,19 +3,39 @@
 
 #include "pch.h"
 #include <iostream>
+#include <vector>
+using namespace std;
+
+void print(std::vector<double> const &input)
+{
+	for (int i = 0; i < input.size(); i++) {
+		std::cout << input.at(i) << ' ';
+	}
+}
+
+vector<double> operator+(const vector<double>& lhs, const vector<double>& rhs) {	// return type is a vector of integers
+
+
+	vector<double> result;	// Declaring the resulting vector, result
+	int resultSize = lhs.size() + rhs.size();
+
+	for (double item : lhs) {
+		result.push_back(item);
+	}
+	for (double item : rhs) {
+		result.push_back(item);
+	}
+
+	return result;	// returning the vector "result"
+
+}
+
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	cout << "Hello world!" << endl;
+	std::vector<double> test = std::vector<double>{ 6.7, -12.3, 5 } +std::vector<double> {0.5, -2.7, 19};
+	return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
