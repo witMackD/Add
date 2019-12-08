@@ -14,8 +14,8 @@ void print(std::vector<double> const &input)
 	std::cout << endl;
 }
 
-vector<double> operator+(const vector<double>& lhs, const vector<double>& rhs) {	// return type is a vector of integers
-	vector<double> result;	// Declaring the resulting vector, result
+vector<double> operator+(const vector<double>& lhs, const vector<double>& rhs) {	
+	vector<double> result;
 	int resultSize = lhs.size() + rhs.size();
 
 	for (double item : lhs) {
@@ -24,11 +24,11 @@ vector<double> operator+(const vector<double>& lhs, const vector<double>& rhs) {
 	for (double item : rhs) {
 		result.push_back(item);
 	}
-	return result;	// returning the vector "result"
+	return result;
 }
 
 vector<double>& operator+=(vector<double>& lhs, const vector<double>& rhs) {	
-	for (int item : rhs) {
+	for (double item : rhs) {
 		lhs.push_back(item);
 	}
 	return lhs;
